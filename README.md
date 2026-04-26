@@ -12,4 +12,6 @@ This repository is organized to support:
 ## Start here
 - High-level architecture: `docs/architecture.md`
 - Phased build plan: `docs/roadmap.md`
-- First implemented tool (accelerometer parser/analyzer): `services/analysis_engine`
+- Data analyzer web MVP: `docs/data_analyzer_app.md`
+- Accelerometer parser/extraction engine: `services/analysis_engine`
+- Web app source: `apps/data_analyzer_web`

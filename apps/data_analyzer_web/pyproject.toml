@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "countpp-data-analyzer-web"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+  "dash>=3.0.0",
+  "plotly>=6.0.0",
+  "countpp-analysis @ file:///workspace/countpp/services/analysis_engine",
+]

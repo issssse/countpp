@@ -5,6 +5,8 @@ import csv
 import math
 from pathlib import Path
 
+from .extraction import detect_peak_events
+
 
 @dataclass(frozen=True)
 class AccelerometerSample:
@@ -49,28 +51,11 @@ def detect_events_from_samples(
     reset_delta: float = 0.8,
     min_separation_s: float = 0.08,
 ) -> list[float]:
-    """Detect event timestamps from acceleration magnitude.
-
-    Uses a threshold + hysteresis strategy:
-    - Trigger when |mag - baseline| >= trigger_delta.
-    - Rearm after |mag - baseline| <= reset_delta.
-    - Enforce minimum time separation between events.
-    """
-    if not samples:
-        return []
-
-    events: list[float] = []
-    armed = True
-    last_event_t = float("-inf")
-
-    for s in samples:
-        delta = abs(s.magnitude - baseline_g)
-
-        if armed and delta >= trigger_delta and (s.t - last_event_t) >= min_separation_s:
-            events.append(s.t)
-            last_event_t = s.t
-            armed = False
-        elif (not armed) and delta <= reset_delta:
-            armed = True
-
-    return events
+    """Backwards-compatible wrapper for peak event detection."""
+    return detect_peak_events(
+        samples,
+        baseline_g=baseline_g,
+        trigger_delta=trigger_delta,
+        reset_delta=reset_delta,
+        min_separation_s=min_separation_s,
+    )
