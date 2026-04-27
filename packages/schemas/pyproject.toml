@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "countpp-schemas"
+version = "0.1.0"
+description = "Shared recording, stream, annotation, and extractor schemas for countpp"
+requires-python = ">=3.10"
+dependencies = []

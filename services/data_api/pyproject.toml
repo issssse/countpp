@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "countpp-data-api"
+version = "0.1.0"
+description = "FastAPI service for countpp datasets, extractor runs, and exports"
+requires-python = ">=3.10"
+dependencies = [
+  "countpp-extractors>=0.1.0",
+  "countpp-label-studio-bridge>=0.1.0",
+  "countpp-signal-io>=0.1.0",
+  "fastapi>=0.115.0",
+  "uvicorn>=0.30.0",
+]
+
+[project.scripts]
+countpp-data-api = "countpp_data_api.app:main"

@@ -1,0 +1,10 @@
+[tool.pytest.ini_options]
+pythonpath = [
+  "packages/schemas/src",
+  "packages/signal_io/src",
+  "packages/extractors/src",
+  "services/label_studio_bridge/src",
+  "services/extraction_worker/src",
+  "services/data_api/src",
+  "services/analysis_engine/src",
+]

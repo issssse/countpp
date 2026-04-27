@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "countpp-extraction-worker"
+version = "0.1.0"
+description = "Batch extraction worker CLI for countpp streams"
+requires-python = ">=3.10"
+dependencies = [
+  "countpp-extractors>=0.1.0",
+  "countpp-label-studio-bridge>=0.1.0",
+  "countpp-signal-io>=0.1.0",
+]
+
+[project.scripts]
+countpp-extract = "countpp_extraction_worker.cli:main"

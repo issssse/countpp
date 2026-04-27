@@ -3,11 +3,12 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "countpp-data-analyzer-web"
+name = "countpp-extractors"
 version = "0.1.0"
+description = "Extractor plugins for countpp streams"
 requires-python = ">=3.10"
 dependencies = [
-  "dash>=3.0.0",
-  "plotly>=6.0.0",
-  "countpp-analysis @ file:///workspace/countpp/services/analysis_engine",
+  "countpp-schemas>=0.1.0",
+  "countpp-signal-io>=0.1.0",
+  "pyarrow>=15.0.0",
 ]

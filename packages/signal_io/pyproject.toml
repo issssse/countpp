@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "countpp-signal-io"
+version = "0.1.0"
+description = "Signal import/export adapters for countpp"
+requires-python = ">=3.10"
+dependencies = [
+  "countpp-schemas>=0.1.0",
+  "pyarrow>=15.0.0",
+]
